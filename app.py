@@ -259,49 +259,69 @@ CONTRIBUIÇÕES INDIVIDUAIS:
 # Visual
 st.markdown("""
 <style>
+:root { color-scheme: dark; }
+html, body, [data-testid="stAppViewContainer"], [data-testid="stMain"],
+[data-testid="stMainBlockContainer"], [data-testid="stHeader"],
+[data-testid="stToolbar"], [data-testid="stSidebar"],
+[data-testid="stSidebar"] > div, section[data-testid="stSidebar"] {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
 .block-container {padding-top: 1.8rem; max-width: 1250px;}
-[data-testid="stSidebar"] {background: #fff4f8;}
-.hero {padding: 1.35rem 1.55rem; border-radius: 18px; background: linear-gradient(115deg,#2b2037,#75445f); color: white; margin-bottom: 1.1rem;}
-.hero h1 {color:white; margin:0; font-size:2.15rem;}
-.hero p {color:#f8eaf1; margin:.35rem 0 0 0;}
-.section-note {color:#756875; font-size:.92rem;}
-div.stButton > button {border-radius:11px; min-height:2.6rem;}
-/* Contraste dos campos e mensagens: funciona também em tema escuro. */
+[data-testid="stAppViewContainer"] *, [data-testid="stSidebar"] * {
+    color: #ffffff;
+}
+.hero {
+    padding: 1.35rem 1.55rem;
+    border-radius: 18px;
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #333333;
+    margin-bottom: 1.1rem;
+}
+.hero h1, .hero p {color: #ffffff !important;}
+.section-note {color: #ffffff; font-size: .92rem;}
+div.stButton > button {
+    border-radius: 11px;
+    min-height: 2.6rem;
+    background: #171717 !important;
+    color: #ffffff !important;
+    border: 1px solid #555555 !important;
+}
+div.stButton > button:hover {background: #292929 !important; border-color: #888888 !important;}
 div[data-testid="stTextInput"] input,
-div[data-testid="stTextArea"] textarea {
-    background-color: #ffffff !important;
-    color: #241b2b !important;
-    -webkit-text-fill-color: #241b2b !important;
-    border: 1px solid #b9a8b5 !important;
+div[data-testid="stTextArea"] textarea,
+div[data-testid="stSelectbox"] div[data-baseweb="select"] > div,
+div[data-testid="stMultiSelect"] div[data-baseweb="select"] > div {
+    background: #000000 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border: 1px solid #666666 !important;
 }
 div[data-testid="stTextInput"] input::placeholder,
 div[data-testid="stTextArea"] textarea::placeholder {
-    color: #766977 !important;
-    -webkit-text-fill-color: #766977 !important;
+    color: #bdbdbd !important;
+    -webkit-text-fill-color: #bdbdbd !important;
     opacity: 1 !important;
 }
 div[data-testid="stAlert"] {
+    background: #000000 !important;
+    border: 1px solid #777777 !important;
     border-radius: 10px !important;
 }
 div[data-testid="stAlert"] p,
 div[data-testid="stAlert"] span,
 div[data-testid="stAlert"] [data-testid="stMarkdownContainer"] * {
-    color: #29212b !important;
-    -webkit-text-fill-color: #29212b !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 }
-div[data-testid="stAlert"][kind="warning"] {
-    background: #fff2c6 !important;
-    border: 1px solid #d6a62b !important;
+[data-testid="stExpander"], [data-testid="stVerticalBlockBorderWrapper"],
+[data-testid="stPopover"], [data-testid="stTooltipContent"] {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-color: #444444 !important;
 }
-div[data-testid="stAlert"][kind="success"] {
-    background: #e5f5e9 !important;
-    border: 1px solid #68a879 !important;
-}
-div[data-testid="stAlert"][kind="error"] {
-    background: #fde8e8 !important;
-    border: 1px solid #d77b7b !important;
-}
-
+hr {border-color: #444444 !important;}
 </style>
 """, unsafe_allow_html=True)
 
