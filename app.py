@@ -188,7 +188,13 @@ WORKFLOWS = {
 }
 
 def get_api_key():
-    return st.session_state.get("api_key_input", "").strip() or st.secrets.get("GEMINI_API_KEY", "")
+    typed_key = st.session_state.get("api_key_input", "").strip()
+    if typed_key:
+        return typed_key
+    try:
+        return st.secrets["GEMINI_API_KEY"]
+    except Exception:
+        return ""
 
 def gemini_request(api_key, prompt, temperature=0.7):
     url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
