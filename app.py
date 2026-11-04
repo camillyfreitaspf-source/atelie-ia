@@ -266,6 +266,42 @@ st.markdown("""
 .hero p {color:#f8eaf1; margin:.35rem 0 0 0;}
 .section-note {color:#756875; font-size:.92rem;}
 div.stButton > button {border-radius:11px; min-height:2.6rem;}
+/* Contraste dos campos e mensagens: funciona também em tema escuro. */
+div[data-testid="stTextInput"] input,
+div[data-testid="stTextArea"] textarea {
+    background-color: #ffffff !important;
+    color: #241b2b !important;
+    -webkit-text-fill-color: #241b2b !important;
+    border: 1px solid #b9a8b5 !important;
+}
+div[data-testid="stTextInput"] input::placeholder,
+div[data-testid="stTextArea"] textarea::placeholder {
+    color: #766977 !important;
+    -webkit-text-fill-color: #766977 !important;
+    opacity: 1 !important;
+}
+div[data-testid="stAlert"] {
+    border-radius: 10px !important;
+}
+div[data-testid="stAlert"] p,
+div[data-testid="stAlert"] span,
+div[data-testid="stAlert"] [data-testid="stMarkdownContainer"] * {
+    color: #29212b !important;
+    -webkit-text-fill-color: #29212b !important;
+}
+div[data-testid="stAlert"][kind="warning"] {
+    background: #fff2c6 !important;
+    border: 1px solid #d6a62b !important;
+}
+div[data-testid="stAlert"][kind="success"] {
+    background: #e5f5e9 !important;
+    border: 1px solid #68a879 !important;
+}
+div[data-testid="stAlert"][kind="error"] {
+    background: #fde8e8 !important;
+    border: 1px solid #d77b7b !important;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
